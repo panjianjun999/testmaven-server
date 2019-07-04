@@ -30,7 +30,8 @@ public class DemoWatcher implements Watcher {
         
         try {
         	if(zk != null) {
-        		System.out.println("\t event.getPath()=" + zk.getChildren(event.getPath(), true));
+        		System.out.println("\t event.getPath()=" + event.getPath());
+        		System.out.println("\t event.getPath()=" + zk.getChildren(event.getPath(), true).toString());
         		
         		zk.exists(event.getPath(),true);//持续观察
         	}

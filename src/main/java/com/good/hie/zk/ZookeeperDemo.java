@@ -14,6 +14,11 @@ import org.apache.zookeeper.ZooKeeper.States;
 import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
 
+/**
+ * 使用源生api操作Zookeeper,监听功能未完善,不好用,还是用ZkClient方便
+ * @author Pan
+ *
+ */
 public class ZookeeperDemo {
 	/** 服务地址，ip:port，多个地址用逗号隔开 */
     private static final String SERVER_ADDRESS = "10.6.8.98:2181,10.6.8.98:2182,10.6.8.98:2183";
@@ -132,8 +137,8 @@ public class ZookeeperDemo {
      */
     public static void waitUntilConnected(ZooKeeper zooKeeper) {
         CountDownLatch connectedLatch = new CountDownLatch(1);
-//        Watcher watcher = new ConnectedWatcher(connectedLatch);
-//        zooKeeper.register(watcher);
+        Watcher watcher = new ConnectedWatcher(connectedLatch);
+        zooKeeper.register(watcher);
         if (States.CONNECTING == zooKeeper.getState()) {
             try {
                 connectedLatch.await();
