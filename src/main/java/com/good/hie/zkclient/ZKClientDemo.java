@@ -106,6 +106,6 @@ public class ZKClientDemo {
 //		System.out.println("我的数据:" + zkClient.readData(NODE_ZOO));
 		
 		//列出根下所有节点
-        System.out.println("我的子节点:" + zkClient.getChildren(NODE_ZOO).toString());
+        System.out.println("我的子节点:" + zkClient.getChildren(nodeZoo).toString());
 	}
 }

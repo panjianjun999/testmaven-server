@@ -33,6 +33,19 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+//        assertTrue( true );
+        
+    	System.out.println("测试1:");
+        assertEquals(3, new App().sum(1,2));
+        
+        System.out.println("测试2:");
+        assertEquals(6, new App().sum(1,5));
+        
+        System.out.println("测试3:");
+        assertEquals(51, new App().sum(1,50));
+        
+        System.out.println("测试4:");
+        assertEquals(11, new App().sum(5,6));
     }
+    
 }

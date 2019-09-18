@@ -32,4 +32,17 @@ public class App
 		System.out.println( "Hello World!1-1=" + (ti11 - ti1));
         System.out.println( "Hello World!2-2=" + (ti22 - ti2));
     }
+    
+    /**
+     * 测试加法
+     * @param x
+     * @param y
+     * @return
+     */
+    public int sum(int x,int y) {
+    	if(y > 10) {
+    		throw new RuntimeException("不支持的参数");
+    	}
+    	return x + y;
+    }
 }
